@@ -18,13 +18,14 @@
     <div class='container'>
         <div class='jumbotron jumboHeader'>
             <h1 class='text-center'>
-                <i class="fa fa-newspaper-o"></i>New York Times Search</h1>
+                <i class="fa fa-newspaper-o"></i> New York Times Search</h1>
             </h1>
         </div>
         <div class='row'>
             <div class='col-xs-12'>
                 <div class='panel panel-primary'>
-                    <div class='panel-heading'>Search Parameters</div>
+                    <div class='panel-heading'>
+                        <i class="fa  fa-list-alt"></i> Search Parameters</div>
                     <div class='panel-body'>
                         <form role='form'>
                             <div class='form-group'>
@@ -37,9 +38,9 @@
                                 <label>
                                     Number of Records:
                                     <select id='numberRecords' class='form-control'>
-                                        <option value='1'>1</option>
-                                        <option value='5'>5</option>
-                                        <option value='10'>10</option>
+                                        <option>1</option>
+                                        <option selected>5</option>
+                                        <option>10</option>
                                     </select>
                                 </label>
                             </div>
@@ -55,15 +56,15 @@
                                     <input type="text" id='endYear' class='searchElements form-control'>
                                 </label>
                             </div>
-                            <button id='search'>Search</button>
-                            <button id='clear'>Clear</button>
+                            <button class='btn' id='search'><i class="fa fa-search"></i> Search</button>
+                            <button class='btn' id='clear'><i class="fa fa-trash"></i> Clear</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class='panel panel-primary'>
-            <div class='panel-heading'>Top Articles</div>
+            <div class='panel-heading'><i class="fa fa-table"></i> Top Articles</div>
             <div id='articleDivs' class='panel-body'></div>
         </div>
     </div>

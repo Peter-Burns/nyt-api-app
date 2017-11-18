@@ -20,7 +20,7 @@ $('#search').on('click',function(event){
         var docsArray = response.response.docs;
         for(var i = 0;i<howMany;i++){
             var newDiv = $('<div class="well">');
-            newDiv.append($('<h3><span class="label label-primary">'+(i+1)+'</span><strong>' + docsArray[i].headline.main + '</strong></h3>'));
+            newDiv.append($('<h3><span class="label label-primary"> '+(i+1)+'</span><strong> ' + docsArray[i].headline.main + '</strong></h3>'));
             if(docsArray[i].byline)newDiv.append($('<p>' + docsArray[i].byline.original + '</p>'));
             newDiv.append($('<p>' + docsArray[i].snippet + '</p>'));
             if(docsArray[i].pub_date)newDiv.append($('<p>' + docsArray[i].pub_date + '</p>'));
