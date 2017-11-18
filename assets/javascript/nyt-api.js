@@ -7,10 +7,10 @@ $('#search').on('click',function(event){
         queryURL+='&q='+$('#searchParameters').val();
     }
     if($('#startYear').val()){
-        queryURL+='&y='+$('#startYear').val()+'0101';
+        queryURL+='&begin_date='+$('#startYear').val()+'0101';
     }
     if($('#endYear').val()){
-        queryURL+='&y='+$('#endYear').val()+'0101';
+        queryURL+='&end_date='+$('#endYear').val()+'0101';
     }
     var howMany = parseInt($('#numberRecords option:selected').text());
     $.ajax({
