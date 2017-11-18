@@ -1,5 +1,6 @@
 $('#search').on('click',function(event){
     event.preventDefault();
+    $('#articleDivs').empty();
     var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
     queryURL+='?api-key=ea2923a76ac64cfc9f0dfdf6dda3cc85';
     if($('#searchParameters').val()){
@@ -20,8 +21,9 @@ $('#search').on('click',function(event){
         for(var i = 0;i<howMany;i++){
             var newDiv = $('<div>');
             newDiv.append($('<h3><span class="label label-primary">'+(i+1)+'</span><strong>' + docsArray[i].headline.main + '</strong></h3>'));
-            //newDiv.append($('<p>' + docsArray[i].byline.original + '</p>'));
-            newDiv.append($('<p>' + docsArray[i].pub_date + '</p>'));
+            if(docsArray[i].byline)newDiv.append($('<p>' + docsArray[i].byline.original + '</p>'));
+            newDiv.append($('<p>' + docsArray[i].snippet + '</p>'));
+            if(docsArray[i].pub_date)newDiv.append($('<p>' + docsArray[i].pub_date + '</p>'));
             newDiv.append($('<a href=' + docsArray[i].web_url + '>' + docsArray[i].web_url + '</a>'))
             $('#articleDivs').append(newDiv);
         }
