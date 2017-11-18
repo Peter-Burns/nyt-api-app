@@ -38,7 +38,7 @@ $.ajax({
 }).done(function(response){
     var docsArray = response.response.docs;
     for(var i = 0;i<howMany;i++){
-        var newDiv = $('<div>');
+        var newDiv = $('<div class="row">');
         newDiv.append($('<h3><span class="label label-primary">'+(i+1)+'</span><strong>' + docsArray[i].headline.main + '</strong></h3>'));
         newDiv.append($('<p>' + docsArray[i].byline.original + '</p>'));
         newDiv.append($('<p>' + docsArray[i].pub_date + '</p>'));
